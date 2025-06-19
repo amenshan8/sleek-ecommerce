@@ -1,0 +1,294 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek eCommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo"><a href="#home">SleekStore</a></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <!-- Dark Mode Toggle -->
+                 <button id="mode-toggle" class="icon-button"><i class="fas fa-sun"></i></button>
+                <a href="#cart" class="icon-button"><i class="fas fa-shopping-cart"></i> <span id="cart-count" class="cart-count">0</span></a>
+                <!-- Login/Register links or User Info/Logout button will be added here by JS -->
+                <a href="#login" class="button primary small auth-link-item">Login</a>
+                <a href="#register" class="button secondary small auth-link-item">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <section id="home" class="page active">
+            <div class="hero-section">
+                <div class="container">
+                    <h1>Discover Your Next Favorite Item</h1>
+                    <p>Experience premium quality and style with our curated collection.</p>
+                    <a href="#products" class="button primary large">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="container section-block">
+                <h2>Featured Categories</h2>
+                <div class="category-grid">
+                    <a href="#products?category=Electronics" class="category-card">
+                        <img src="electronics_category.png" alt="Electronics">
+                        <h3>Electronics</h3>
+                    </a>
+                    <a href="#products?category=Mobile Devices" class="category-card">
+                         <img src="mobile_category.png" alt="Mobile Devices">
+                        <h3>Mobile Devices</h3>
+                    </a>
+                    <a href="#products?category=Clothing" class="category-card">
+                         <img src="clothing_category.png" alt="Clothing">
+                        <h3>Clothing</h3>
+                    </a>
+                     <a href="#products?category=Lifestyle" class="category-card">
+                         <img src="lifestyle_category.png" alt="Lifestyle">
+                        <h3>Lifestyle</h3>
+                    </a>
+                    <a href="#products?category=Home Appliances" class="category-card">
+                         <img src="homeapp_category.png" alt="Home Appliances">
+                        <h3>Home Appliances</h3>
+                    </a>
+                     <a href="#products?category=Outdoor Gear" class="category-card">
+                         <img src="outdoor_category.png" alt="Outdoor Gear">
+                        <h3>Outdoor Gear</h3>
+                    </a>
+                </div>
+            </div>
+
+             <div class="container section-block discount-promo-banner">
+                <h2>Special Offer! 🎉</h2>
+                <p>Use these codes at checkout for great savings:</p>
+                <div class="discount-codes-list">
+                    <div class="discount-code-item">
+                        <span>SEEK15</span> - 15% off on orders above €50
+                        <button class="copy-code-button" data-code="SEEK15"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                    <div class="discount-code-item">
+                         <span>SEEK30</span> - 30% off on orders above €70
+                        <button class="copy-code-button" data-code="SEEK30"><i class="fas fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                <div id="copy-feedback" class="success-message" style="display:none;">Code copied!</div>
+            </div>
+
+             <div class="container section-block">
+                <h2>AI Recommendations <i class="fas fa-robot"></i></h2>
+                <p>Based on your interests, we recommend:</p>
+                <div id="recommendations-grid" class="product-grid">
+                    <!-- Recommendations will be loaded here by JS -->
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="page">
+             <div class="container">
+                <h2>All Products</h2>
+                <div class="filter-bar">
+                    <label for="category-filter">Filter by Category:</label>
+                    <select id="category-filter">
+                        <option value="All">All</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mobile Devices">Mobile Devices</option>
+                        <option value="Clothing">Clothing</option>
+                         <option value="Lifestyle">Lifestyle</option>
+                         <option value="Home Appliances">Home Appliances</option>
+                         <option value="Outdoor Gear">Outdoor Gear</option>
+                    </select>
+                </div>
+                <div id="product-list" class="product-grid">
+                    <!-- Products will be loaded here by JS -->
+                </div>
+             </div>
+        </section>
+
+         <section id="product-detail" class="page">
+            <div class="container product-detail-container">
+                <!-- Product details loaded by JS -->
+            </div>
+             <div class="container section-block reviews-section">
+                 <h2>Customer Reviews</h2>
+                 <div id="product-reviews">
+                     <!-- Reviews will be loaded here by JS -->
+                     <p>No reviews yet.</p>
+                 </div>
+             </div>
+         </section>
+
+        <section id="contact" class="page">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Reach out via the form below or visit our store.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Store Location</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Random Street 123, 4567 AB City, The Netherlands</p>
+                         <h3>Email & Phone</h3>
+                        <p><i class="fas fa-envelope"></i> info@sleekstore.example.com</p>
+                         <p><i class="fas fa-phone-alt"></i> +31 123 456 789</p>
+                         <h3>Opening Hours</h3>
+                         <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 - 18:00</p>
+                         <p>Sat: 10:00 - 16:00</p>
+                         <p>Sun: Closed</p>
+                    </div>
+                     <div class="contact-map">
+                         <h3>Find Us</h3>
+                         <!-- Google Maps Embed Placeholder -->
+                         <iframe
+                            src="https://maps.google.com/maps?q=Random+Street+123,+4567+AB+City,+The+Netherlands&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                         </iframe>
+                     </div>
+                </div>
+
+                 <div class="contact-form-container section-block">
+                     <h3>Send us a message</h3>
+                     <form id="contact-form" class="contact-form">
+                         <div class="form-group">
+                             <label for="name">Name:</label>
+                             <input type="text" id="name" name="name" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="email">Email:</label>
+                             <input type="email" id="email" name="email" required>
+                         </div>
+                         <div class="form-group">
+                             <label for="subject">Subject:</label>
+                             <input type="text" id="subject" name="subject">
+                         </div>
+                         <div class="form-group">
+                             <label for="message">Message:</label>
+                             <textarea id="message" name="message" rows="6" required></textarea>
+                         </div>
+                         <button type="submit" class="button primary">Send Message</button>
+                     </form>
+                      <div id="contact-message" class="success-message" style="display:none;">Your message has been sent!</div>
+                 </div>
+
+            </div>
+        </section>
+
+        <section id="login" class="page auth-page">
+            <div class="container">
+                <h2>Login</h2>
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-email">Email:</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="button primary full-width">Login</button>
+                    <p class="auth-link">Don't have an account? <a href="#register">Register here</a>.</p>
+                </form>
+                 <div id="login-message" class="message" style="display:none;"></div>
+            </div>
+        </section>
+
+        <section id="register" class="page auth-page">
+            <div class="container">
+                <h2>Register</h2>
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="register-name">Name:</label>
+                        <input type="text" id="register-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email:</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password:</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password:</label>
+                        <input type="password" id="register-confirm-password" name="confirm-password" required>
+                    </div>
+                    <button type="submit" class="button primary full-width">Register</button>
+                    <p class="auth-link">Already have an account? <a href="#login">Login here</a>.</p>
+                </form>
+                 <div id="register-message" class="message" style="display:none;"></div>
+            </div>
+        </section>
+
+         <section id="cart" class="page">
+            <div class="container">
+                <h2>Shopping Cart</h2>
+                <div id="cart-items">
+                    <!-- Cart items will be loaded here by JS -->
+                    <p>Your cart is empty.</p>
+                </div>
+
+                <div class="discount-section">
+                    <h3>Discount Code</h3>
+                    <div class="discount-input">
+                        <input type="text" id="discount-code-input" placeholder="Enter code">
+                        <button id="apply-discount-button" class="button primary small">Apply</button>
+                    </div>
+                    <div id="discount-error-message" class="error-message" style="display:none;"></div>
+                    <div id="applied-discounts-list" class="applied-discounts-list">
+                        <!-- Applied discounts will be loaded here by JS -->
+                    </div>
+                </div>
+
+                <div id="cart-summary" class="cart-summary" style="display:none;">
+                    <h3>Order Summary</h3>
+                     <p>Subtotal: <span id="cart-subtotal">€0.00</span></p>
+                     <p id="discount-summary-line" style="display:none;">Discount: -<span id="cart-discount">€0.00</span></p>
+                    <p class="cart-total-line">Total: <span id="cart-total">€0.00</span></p>
+                    <button class="button primary full-width">Proceed to Checkout (Simulated)</button>
+                </div>
+            </div>
+         </section>
+    </main>
+
+     <div class="chatbot-container">
+        <button id="chatbot-toggle" class="icon-button"><i class="fas fa-comment-dots"></i></button>
+        <div id="chatbot-window" class="chatbot-window" style="display:none;">
+            <div class="chatbot-header">
+                <span>SleekBot Support</span>
+                 <button id="chatbot-close" class="icon-button small"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="chatbot-body" class="chatbot-body">
+                <!-- Chat messages will appear here -->
+                <div class="chat-message bot-message">
+                    <p>Hello! I'm SleekBot, your virtual assistant. How can I help you today? Ask me about products!</p>
+                </div>
+            </div>
+             <div class="chatbot-input">
+                <input id="chatbot-input" type="text" placeholder="Type your message...">
+                <button id="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+             </div>
+        </div>
+     </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 SleekStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
